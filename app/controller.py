@@ -35,4 +35,4 @@ def play():
 
 @app.route('/results')
 def results():
-    return render_template('results', titel ='Results ', games = games)
+    return render_template('results.html', titel ='Results ', games = games)
