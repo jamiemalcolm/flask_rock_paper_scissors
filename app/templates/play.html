@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/play" method="post">
+    <div class="player_1">
+        <label for="name">Player 1:</label>
+        <input type="text" name="name" id="name" value="Player 1">
+        <label for="choice">Choice</label>
+        <select name="choice" id="choice">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+        </select>
+    </div>
+    <div class="player_1">
+        <label for="name">Player 2:</label>
+        <input type="text" name="name_2" id="name_2" value="Player 2">
+        <label for="choice_2">Choice</label>
+        <select name="choice_2" id="choice_2">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+        </select>
+    </div>
+    <input type="submit" value="Play!">
+</form>
+
+<h1> Results!</h1>
+{% for game in games %}
+<div class="games">
+    <ul>
+        <li> {{game.player_1.name }} {{"and"}} {{ game.player_2.name}} </li>
+
+        <li> {{game.compare(game.player_1, game.player_2) }}</li>
+    </ul>
+</div>
+
+
+{% endfor %}
+
+{% endblock %}

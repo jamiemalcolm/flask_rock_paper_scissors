@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Results!</h1>
+{% for game in games %}
+<div class="games">
+    <ul>
+        <li> {{game.player_1.name }} {{"and"}} {{ game.player_2.name}} </li>
+
+        <li> {{game.compare(game.player_1, game.player_2) }}</li>
+    </ul>
+</div>
+
+
+{% endfor %}
+{% endblock %}
