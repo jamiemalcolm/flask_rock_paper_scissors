@@ -8,7 +8,7 @@ frank = Player("Frank", "paper")
 game1 = Game(jamie, laura)
 game2 = Game(jamie, frank)
 game3 = Game(laura, frank)
-games = [game1, game2, game3]
+games = []
 
 
 # def compare(player_1, player_2):
